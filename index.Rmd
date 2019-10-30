@@ -1,0 +1,154 @@
+---
+title: "AUDI 2020 - MUNICH"
+author: "Buzios Tour"
+date: '25-28 Febrero 2020'
+output:
+ 
+  html_document:
+    css: FORMATO.css
+    highlight: textmate
+    theme: cosmo
+    toc: yes
+    toc_float: yes
+---
+
+<script> 
+    $(document).ready(function() { 
+    $head = $('#header'); 
+    $head.prepend('<A href = https://www.cuttingedge-events.com><img src ="LOGO.png" width="150" vspace="50" align="right"></A>') 
+    }); 
+</script> 
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE)
+```
+
+
+```{r libraries}
+library(readxl)
+library(dplyr)
+library(knitr)
+library(timevis)
+
+```
+
+<iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1TE6UVYGbrnt2E6XFaYCsAwPQ0MVAm9sCTGO0K8cf9Yo&font=OpenSans-GentiumBook&lang=es&initial_zoom=0&height=500' width='100%' height='500' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
+
+
+# Programa
+
+## 25 Febrero
+
+Al llegar al Aeropuerto de Munich, los invitados serán trasladados al hotel en un Bus de 30 plazas, así nos aseguraremos que no hay problemas de espacio para las maletas.
+
+Luego, a las 18.30h otro bus, esta vez de 20 plazas, los recogerá en el hotel para trasladarlos al restaurante para la cena.
+El mismo bus estará a disposición para trasladar a los clientes de vuelta después de la cena.
+
+
+<iframe src="HALALI/Halali.html" frameborder="0" width="100%" height="1100" scrolling="no"></iframe>
+
+
+## 27 Febrero
+
+A las 18.30h un bus de 20 plazas recogerá en el hotel a los invitados para trasladarlos al restaurante para la cena.
+El mismo bus estará a disposición para trasladar a los clientes de vuelta después de la cena.
+
+
+<iframe src="SCHAPEAU/Schapeau.html" frameborder="0" width="100%" height="1000" scrolling="no"></iframe>
+
+
+## 28 Febrero
+
+
+La actividad que proponemos está pensada para un grupo que quiera vivir nuevas experiencias. Está basada en el mítico Estadio Olímpico de Munich pero como más abajo explicaremos se puede visitar de diferentes maneras...incluyendo un almuerzo por todo lo alto!!
+
+
+El mítico Estadio Olimpico es ahora una obra maestra de la arquitectura y ofrece muchas opciones. Para este dia especial proponemos un tour al estadio en el que se visitaran todas las zonas VIP incluyendo los vestuarios.
+
+El tour finaliza en el campo de juego donde nuestros invitados podrán chutar unos penalties y jugar al futbolin.
+
+
+<img src = "STADIUM TOUR.jpg" width="380">
+<img src = "STADIUM TOUR 2.jpg" width="380" align="right">
+
+Proponemos combinar el tour al estadio con un "Paseo por el tejado". Este es un tour de 120 minutos en el que, con arneses, los invitados caminaran guiados por un experto que les explicará todos los detalles arquitectónicos a la vez que gozarán de las mejores vistas alrededor del estadio.
+
+<img src = "ROOFTOP CLIMB.jpg" width="100%">
+
+*Esta actividad no podrá realizarse en caso de haber nieve en el tejado*
+
+A la hora del almuerzo nuestra sugerencia es subir a la Torre Olympica donde se encuentra el restaurante 181
+
+<iframe src="181/181.html" frameborder="0" width="100%" height="1000" scrolling="no"></iframe>
+
+Un bus de 30 plazas recogerá al grupo por la mañana, los llevará al luegar de la actividad quedándose con el equipaje y los trasladará al aeropuerto despues del almuerzo.
+
+FIN DEL PROGRAMA
+
+*****
+
+## Presupuesto
+
+<iframe src="BUDGET.html"  frameborder="0" width="100%" height="1600" scrolling="no"></iframe>
+
+<br>
+
+## Condiciones
+
+  * Precios válidos para 2020
+  
+  * Precios netos para Buzios Viajes
+  
+  * Precios válidos para un grupo de minimo 18 personas
+  
+  * La gestión de Cutting Egde Events está incluida en los precios
+  
+  * Tasas incluidas. 
+  
+  * No se ha realizado ninguna reserva. Se revisará la disponibilidad una vez se confirme.
+
+<br>
+<br>
+
+## Sorprendan a sus clientes!!
+
+<div class="client_offer">
+
+<p>¿Les ha gustado nuestra presentación? La meta principal de _**Cutting Edge Events**_ es ayudarles a **ganar** este negocio. Seguramente ahora copiarían toda la información que contiene esta web y harían su propia presentación.<br>
+
+<p>Pero...¿porqué no utilizar nuestra tecnología y presentar esta propuesta a su cliente en nuestro formato? Ahora les ofrecemos, como un servicio **totalmente gratuito**, la posibilidad de poder sorprender a sus clientes con su novedosa propuesta. </p>
+
+<p> ¿Cómo lo hacemos?: 
+  <ul>
+  
+* Seguimos sus instrucciones para añadir cualquier cosa que quiran que esté incluida en su presentación y borrar cualquier otra información que consideren irrelevante.
+    
+* Incluimos el logo e información de su empresa y eliminamos todos nuestros datos.
+    
+* Podemos incluso cambiar algunos de los colores para que se asemeje más a su imagen corporativa.
+    
+* Una vez finalizada le enviaremos un nuevo link que no tendrá ninguna referencia a Cutting Edge Events para que puedan enviarlo a sus clientes como una presentación propia.
+  </ul>
+</p>
+</div>
+
+<style>
+
+.client_offer{
+background-color: #ee7600;
+color: white;
+padding: 10px;
+border: 1px solid black;
+margin-left: 25px;
+border-radius: 5px;
+font-style: italic;
+}
+</style>
+
+******************
+
+
+
+

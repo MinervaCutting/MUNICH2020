@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.1.266/build/pdf.min.js"></script>
+  <style>
+		:root {
+  /* Set fade in duration */
+  --fade-time: 0.5s;
+}
+
+body {
+  margin: 0px;
+  padding: 0;
+  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica,Arial,sans-serif;
+  font-weight: 360;
+  line-height: 130%;
+  
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  border: #fff solid 1px;
+ 
+}
+
+.main-img img,
+.imgs img {
+  width: 100%;
+}
+
+.imgs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+}
+
+.imgs img {
+  cursor: pointer;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn var(--fade-time) ease-in 1 forwards;
+}
+
+/* Media Queries */
+@media(max-width: 600px) {
+  .imgs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.three{
+  margin-top: 3rem;
+  padding: 10px;
+  clear:both;
+}
+
+</style>
+</head>
+
+
+<body>
+  <div class="activities" style="margin: auto; padding: 0px;">   
+    <h3>Restaurante Halali</h3>                                              <!--insertar titulo-->
+    <p> El restaurante Halali está ubicado en el centro de Munich, muy cerca de "Englischer Garten" (Jardín Inglés de Múnich), en una zona muy tranquila pero muy bien comunicada. El restaurante ofrece una cocina tradicional y artesana para que los clientes puedan disfrutar de una buena cocina alemana. El restaurante está especializado, sobre todo, en carnes.<p>
+
+    <p>El ambiente en el restaurante Halali es muy acogedor, con una decoración antigua que combina la tradición alemana con la tradición austríaca. </p>  
+
+    </p>El vino es uno de los puntos fuertes de este restaurante. Ofrece vinos, en su mayoría, Austríacos y Franceses, aunque también tiene una buena selección de vinos locales .</p> 
+
+                     <!--insertar el texto-->
+    <hr>
+  </div>
+	<div class="container">
+    <div class="main-img">
+      <img src="halali1.jpg" id="current">
+    </div>
+
+    <div class="imgs">                                          <!--insertar las fotos-->
+      <img src="halali2.jpg">
+      <img src="halali3.jpg">
+      <img src="halali0.jpg">
+      <img src="halali4.jpg">
+    </div>
+  </div>
+  <hr>
+  
+  <section class="container">
+
+<div class ="one" style="float: left;
+    padding: 10px; background-color: rgba(238, 238, 238, 0.6)">
+<p><i class="fa fa-map-o" style="font-size:20px;color:orange;"></i>   <!--insertar la info relevante a los iconos-->
+<span style="margin: 0 15px; font-size:14px"><b>Localización:</b> Centro de Múnich</p></span>
+<p><i class="fa fa-cutlery" style="font-size:20px;color:orange;"></i> 
+<span style="margin: 0 20px; font-size:14px"><b>Capacidad:</b> Utilizable </p></span>
+<p><i class="fa fa-eur" style="font-size:20px;color:orange;"></i> 
+<span style="margin: 0 23px; font-size:14px"><b>Precio:</b> medio-alto</p></span>
+</div>
+
+<div class ="two" style="float: right;
+    padding: 10px; background-color: rgba(238, 238, 238, 0.6); ">
+
+<p><i class="fa fa-handshake-o" style="font-size:20px;color:orange;"></i> 
+<span style="margin: 0 3px; font-size:14px"><b>Estilo:</b> Cocina tradicional alemana</p></span>
+<p><i class="fa fa-apple" style="font-size:20px;color:orange;"></i> 
+<span style="margin: 0 10px"><b>Opción vegetariana:</b> Disponible bajo petición </p></span>
+<p><i class="fa fa-wheelchair" style="font-size:22px;color:orange;"></i>   
+<span style="margin: 0 90px, font-size:14px"><b>Facilidades para discapacitados:</b> Si</p></span>
+</div><div class="three"></div>
+<div id="menu">
+    <h3><em><strong></strong></em></h3>
+    <canvas id="my_canvas"></canvas>
+</div>
+</section>
+
+</div> 
+
+
+<script>                           //Eliminar esta línea si no queremos añadir el sample menu  
+pdfjsLib.getDocument('./sample_menu_toto.pdf').then(doc => {
+    doc.getPage(1).then(page => {
+        var myCanvas = document.getElementById("my_canvas") 
+        var context = myCanvas.getContext("2d")
+        var viewport = page.getViewport(.4)           //modificar tamaño del pdf
+        myCanvas.width = viewport.width
+        myCanvas.height = viewport.height
+            page.render({
+                canvasContext: context,
+                viewport: viewport
+                })
+
+            })
+        })
+</script>  
+  
+	<script>
+		const current = document.querySelector('#current');
+const imgs = document.querySelector('.imgs');
+const img = document.querySelectorAll('.imgs img');
+const opacity = 0.6;
+
+// Set first img opacity
+img[0].style.opacity = opacity;
+
+imgs.addEventListener('click', imgClick);
+
+function imgClick(e) {
+  // Reset the opacity
+  img.forEach(img => (img.style.opacity = 1));
+
+  // Change current image to src of clicked image
+  current.src = e.target.src;
+
+  // Add fade in class
+  current.classList.add('fade-in');
+
+  // Remove fade-in class after .5 seconds
+  setTimeout(() => current.classList.remove('fade-in'), 500);
+
+  // Change the opacity to opacity var
+  e.target.style.opacity = opacity;
+}
+	</script>
+</body>
+</html>
